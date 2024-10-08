@@ -14,7 +14,8 @@ jobs:
     uses: canonical/charmed-kubeflow-workflows/.github/workflows/get-rocks-modified-and-build-scan-test-publish.yaml@KF-6331-add-scan-reusable-workflow
     permissions:
       pull-requests: read
-    secrets: inherit
+    secrets:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
     with:
       report-vulnerabilities: true
       severity: "HIGH,CRITICAL"
