@@ -17,8 +17,6 @@ jobs:
     secrets:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
     with:
-      report-vulnerabilities: true
-      severity: "HIGH,CRITICAL"
       microk8s-channel: 1.26-strict/stable
       juju-channel: 3.4/stable
       python-version: "3.8"
