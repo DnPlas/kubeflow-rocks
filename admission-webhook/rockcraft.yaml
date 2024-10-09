@@ -1,7 +1,7 @@
 # From https://github.com/kubeflow/kubeflow/blob/v1.9-branch/components/admission-webhook/Dockerfile
 name: admission-webhook
 base: ubuntu@20.04
-version: v1.10.0
+version: v1.9.0
 summary: An image for Kubeflow's admission-webhook
 description: |
   Admission webhook controller in general, intercepts requests to the Kubernetes API server, 
