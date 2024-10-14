@@ -5,12 +5,12 @@ on:
 
 jobs:
   on-push:
+    strategy:
+      matrix:
+        branch: [main, track/1.8]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        strategy:
-          matrix:
-            branch: [main, track/1.8]
         with:
           fetch-depth: 0
           ref: ${{ matrix.branch }}
