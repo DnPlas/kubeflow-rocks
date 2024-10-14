@@ -4,10 +4,12 @@ on:
   workflow_dispatch:
 
 jobs:
-
   on-push:
     name: Get rocks modified and build-scan-test-publish them
     uses: canonical/charmed-kubeflow-workflows/.github/workflows/get-published-images-scan-and-report.yaml@dnplas-test-kf-6331
+    strategy:
+      matrix:
+        branch: [main, track/1.8]
     secrets:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
     with:
