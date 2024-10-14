@@ -4,7 +4,7 @@ summary: An image for tensorboard controller
 description: |
   This image is used as part of the Charmed Kubeflow product. The controller needs 
   for providing the measurements and visualizations needed during the machine learning workflow.
-version: "1.9.0"
+version: "1.8.0"
 license: Apache-2.0
 base: ubuntu@22.04
 services:

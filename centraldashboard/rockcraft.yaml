@@ -4,7 +4,7 @@ summary: Kubeflow Landing Page
 description: |
   This component serves as the landing page and central dashboard for Kubeflow deployments.
   It provides a jump-off point to all other facets of the platform.
-version: "1.9.0"
+version: "1.7.0"
 license: Apache-2.0
 base: ubuntu@22.04
 platforms:
