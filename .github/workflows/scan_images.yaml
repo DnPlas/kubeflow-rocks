@@ -5,18 +5,19 @@ on:
 
 jobs:
   on-push:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-      strategy:
-        matrix:
-          branch: [main, track/1.8]
-      with:
-        fetch-depth: 0
-        ref: ${{ matrix.branch }}
-
-    - name: Get rocks modified and build-scan-test-publish them
-      uses: canonical/charmed-kubeflow-workflows/.github/workflows/get-published-images-scan-and-report.yaml@dnplas-test-kf-6331
-      secrets:
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
-      with:
-        severity: "HIGH,CRITICAL"
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        strategy:
+          matrix:
+            branch: [main, track/1.8]
+        with:
+          fetch-depth: 0
+          ref: ${{ matrix.branch }}
+  
+      - name: Get rocks modified and build-scan-test-publish them
+        uses: canonical/charmed-kubeflow-workflows/.github/workflows/get-published-images-scan-and-report.yaml@dnplas-test-kf-6331
+        secrets:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        with:
+          severity: "HIGH,CRITICAL"
