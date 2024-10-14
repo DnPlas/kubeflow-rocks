@@ -4,7 +4,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  on-push:
+  scan-images-and-report:
+    runs-on: ubuntu-22.04
     strategy:
       matrix:
         branch: [main, track/1.8]
@@ -12,9 +13,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
           ref: ${{ matrix.branch }}
-  
+
       - name: Get rocks modified and build-scan-test-publish them
         uses: canonical/charmed-kubeflow-workflows/.github/workflows/get-published-images-scan-and-report.yaml@dnplas-test-kf-6331
         secrets:
